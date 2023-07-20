@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Exercicio querySelectorAll e setAttribute</title>
+</head>
+
+<body>
+    <div id="container">
+        <div class="card">
+            <h2 class="titulo-card">Growdev</h2>
+            <p class="descricao-card">Full Stack </p>
+            <button class="botao-editar" onclick="editarCard()">Editar</button>
+            <button class="botao-apagar" onclick="apagarCard()">Deletar</button>
+        </div>
+        <div class="card">
+            <h2 class="titulo-card">Growdev</h2>
+            <p class="descricao-card">UX/UI Designer</p>
+            <button class="botao-editar" onclick="editarCard()">Editar</button>
+            <button class="botao-apagar" onclick="apagarCard()">Deletar</button>
+        </div>
+        <div class="card">
+            <h2 class="titulo-card">Growdev</h2>
+            <p class="descricao-card">Data Science</p>
+            <button class="botao-editar" onclick="editarCard()">Editar</button>
+            <button class="botao-apagar" onclick="apagarCard()">Deletar</button>
+        </div>
+        <div class="card">
+            <h2 class="titulo-card">Growdev</h2>
+            <p class="descricao-card">Quality Assurance</p>
+            <button class="botao-editar" onclick="editarCard()">Editar</button>
+            <button class="botao-apagar" onclick="apagarCard()">Deletar</button>
+        </div>
+        <div class="card">
+            <h2 class="titulo-card">Growdev</h2>
+            <p class="descricao-card">Advanced Mobile</p>
+            <button class="botao-editar" onclick="editarCard()">Editar</button>
+            <button class="botao-apagar" onclick="apagarCard()">Deletar</button>
+        </div>
+    </div>
+</body>
+
+<script>
+/*
+1. Capture, armazene e manipule todos os elementos de classe "card".
+Modifique os estilos necessários nesses elementos para que fique
+semelhante a imagem.
+*/
+const cards = document.querySelectorAll('.card');
+for(const card of cards)
+{
+    card.setAttribute('style', 'background-color: #ff7b00');
+}
+
+
+/*
+2. Capture, armazene e manipule todos os elementos de classe
+"titulo-card". Modifique os estilos necessários nesses elementos
+para que fique semelhante a imagem.
+*/
+const titles = document.querySelectorAll('.titulo-card');
+for(const title of titles)
+{
+    title.setAttribute('style', 'color: #2b385b; padding: 20px 0');
+}
+
+/*
+3. Modifique o texto dos títulos nos cards para "Meu card".
+*/
+for(const title of titles)
+{
+    title.innerHTML = "Meu Card";
+}
+
+/*
+4. Capture, armazene e manipule todos os elementos de classe
+"descricao-card". Modifique os estilos necessários nesses elementos
+para que fique semelhante a imagem.
+*/
+const descriptions = document.querySelectorAll('.descricao-card');
+for(const description of descriptions)
+{
+    description.setAttribute('style', 'color: white; padding: 20px 0');
+}
+
+/*
+5. Modifique o texto das descrições nos cards para "Descrição
+modificada pelo JavaScript".
+*/
+for(const description of descriptions)
+{
+    description.textContent = "Descrição modificada pelo JavaScript";
+}
+
+/*
+6. Capture, armazene e manipule todos os elementos de classe
+"botao-editar". Modifique o estilo desses elementos para que fique
+semelhante a imagem.
+*/
+const editButtons = document.querySelectorAll('.botao-editar');
+for(const editButton of editButtons)
+{
+    editButton.setAttribute('style', 'color: white; background-color: green; border-radius: 10px; padding: 10px; border: 0');
+}
+
+/*
+7. Capture, armazene e manipule todos os elementos de classe
+"botao-apagar". Modifique o estilo desses elementos para que fique
+semelhante a imagem.
+*/
+const deleteButtons = document.querySelectorAll('.botao-apagar');
+for(const deleteButton of deleteButtons)
+{
+    deleteButton.setAttribute('style', 'color: white; background-color: red; border-radius: 10px; padding: 10px; border: 0');
+}
+
+/*
+8. Adicione o atributo 'onclick' nos elementos de classe “botão-editar”.
+Ao clicar nesses elementos, deve chamar a função 'editarCard()'.
+Essa função deve mostrar um alerta com a mensagem "Clicou em
+Editar!".
+*/
+function editarCard()
+{
+    alert("Clicou em Editar!");
+}
+
+/*
+9. Adicione o atributo 'onclick' nos elementos de classe
+“botão-apagar”. Ao clicar nesses elementos deve chamar a função
+'apagarCard()'. Essa função deve perguntar ao usuário se ele tem
+certeza da exclusão do card. Se o usuário confirmar a exclusão deve
+mostrar um alerta com a mensagem "Confirmado!", se não deve
+mostrar a mensagem "Cancelou!".
+*/
+function apagarCard()
+{
+    const ok = confirm("Deseja realmente excluir este card?");
+    if (ok) 
+        alert("Confirmado!");
+    else
+        alert("Cancelou!");
+}
+
+</script>
+
+</html>
